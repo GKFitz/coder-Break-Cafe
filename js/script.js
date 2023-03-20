@@ -14,15 +14,16 @@
 //   }
 // );
 
-const url = "https://api.thecatapi.com/v1/images/search?limit=10";
+// const url = "https://api.thecatapi.com/v1/images/search?limit=10";
 
-const api_key = "live_dyq3XlD3i6ROIfc1C5svJpaWpdLzo5dQyso9rpuUoThjnPfIPgmN5uvA1ylbQ59y";
+// const api_key = "live_dyq3XlD3i6ROIfc1C5svJpaWpdLzo5dQyso9rpuUoThjnPfIPgmN5uvA1ylbQ59y";
 
-// a variable to store the information about the breeds
+
+
+// CATS
+
 
 let storeCatPics = [];
-
-// a function to select a random breed
 
 function fetchCatImage(){
     let image = document.getElementById("catPic")
@@ -33,7 +34,7 @@ function fetchCatImage(){
     
 
 
-function btnClick(){
+function btnClickCat(){
 
     let button = document.getElementById("getCatBtn")
     button.addEventListener("click", fetchCatImage)
@@ -41,7 +42,34 @@ function btnClick(){
 
 document.addEventListener("DOMContentLoaded", () => {
     fetchCatImage()
-    btnClick()
+    btnClickCat()
+})
+
+
+//DOGS
+
+let storeDogPics = [];
+
+// a function to select a random breed
+
+function fetchDogImage(){
+    let image = document.getElementById("dogPic")
+    fetch("https://api.thedogapi.com/v1/images/search?limit=10")
+    .then(resp => resp.json())
+    .then(json => image.src = json[0].url)
+}
+    
+
+
+function btnClickDog(){
+
+    let button = document.getElementById("getDogBtn")
+    button.addEventListener("click", fetchDogImage)
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    fetchDogImage()
+    btnClickDog()
 })
 
 
