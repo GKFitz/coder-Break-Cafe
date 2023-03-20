@@ -1,18 +1,41 @@
+ 
+/* * {
+    box-sizing: border-box; 
+    font-family: 'Roboto', sans-serif;
+} */
 
-.animalSerotonin {
-    box-sizing: border-box;
-    display:flex;
-    justify-content: center;
-    align-items: right;
 
+body {
+    margin: 0px;
+    background-color: aqua;
+}
+img {
     
+    overflow-clip-margin: 20px;
+    overflow: clip;
 }
 
-.catPic{
+.animalSerotonin {
+    margin: auto;
+    box-sizing: border-box;
+    display:flex;
+    justify-content: left;
+    align-items: left;
+    background-color: blue;
+
+    
+} 
+
+
+
+
+
+/* #catPic{
     margin: 0% 25% 0%;
     width: 50%;
     height: 10%;
-}
+    border-color: cyan;
+} */
   
 /* .cat_information {
     display: grid;

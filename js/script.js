@@ -1,5 +1,32 @@
 
-//Cats API
+//Rapid API Random cat API
+
+
+
+//RapidAPI Tasty API Coffee/Cocktails;
+const settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://tasty.p.rapidapi.com/recipes/auto-complete?prefix=chicken%20soup",
+	"method": "GET",
+	"headers": {
+		"X-RapidAPI-Key": "9fa51d6725msha4068349b62f730p12c6d2jsnbe63b8ef2e2d",
+		"X-RapidAPI-Host": "tasty.p.rapidapi.com"
+	}
+};
+
+$.ajax(settings).done(function (response) {
+	console.log(response);
+});
+
+
+
+
+
+
+
+
+// NOt Rapid CATS API
 // const promise = $.ajax(
 //     'https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=beng&api_key=live_dyq3XlD3i6ROIfc1C5svJpaWpdLzo5dQyso9rpuUoThjnPfIPgmN5uvA1ylbQ59y'
 	
@@ -20,12 +47,13 @@
 
 
 
-// CATS
+//  Not rapid API CATS
 
 
 let storeCatPics = [];
 
 function fetchCatImage(){
+    
     let image = document.getElementById("catPic")
     fetch("https://api.thecatapi.com/v1/images/search?limit=10")
     .then(resp => resp.json())
@@ -35,8 +63,7 @@ function fetchCatImage(){
 
 
 function btnClickCat(){
-
-    let button = document.getElementById("getCatBtn")
+    let button = document.getElementById("getCatBtn");
     button.addEventListener("click", fetchCatImage)
 }
 
@@ -62,7 +89,6 @@ function fetchDogImage(){
 
 
 function btnClickDog(){
-
     let button = document.getElementById("getDogBtn")
     button.addEventListener("click", fetchDogImage)
 }
