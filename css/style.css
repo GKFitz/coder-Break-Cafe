@@ -1,0 +1,11 @@
+.cat_image {
+    margin: 0% 25% 0%;
+    width: 50%;
+    height: 25%;
+    border-radius: 10px;
+    border: 5px double gray;
+  }
+  .cat_information {
+    display: grid;
+    justify-content: center;
+  }
