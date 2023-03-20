@@ -16,3 +16,17 @@ promise.then(
 
 
 //Coffee/Cocktails; RapidAPI Tasty API
+const settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://tasty.p.rapidapi.com/recipes/auto-complete?prefix=chicken%20soup",
+	"method": "GET",
+	"headers": {
+		"X-RapidAPI-Key": "9fa51d6725msha4068349b62f730p12c6d2jsnbe63b8ef2e2d",
+		"X-RapidAPI-Host": "tasty.p.rapidapi.com"
+	}
+};
+
+$.ajax(settings).done(function (response) {
+	console.log(response);
+});
