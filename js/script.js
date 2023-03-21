@@ -52,10 +52,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-const $name = $('#name')
-const $thumbNail = $('#thumbNail')
+// const $name = $('#name')
+// const $thumbNail = $('#thumbNail')
 const $instructions = $('#instructions')
-// const $weather = $('#weather')
 const $input = $('input[type="text"]')
 
 //RapidAPI Tasty API Coffee/Cocktails;
@@ -67,10 +66,13 @@ $('form').on('submit', handleGetData);
 function handleGetData(event) {
     event.preventDefault();
     let userInput= $input.val();
+    console.log("I've been hit!")
     const settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://tasty.p.rapidapi.com/recipes/auto-complete?prefix=" + userInput,
+        "url": "https://tasty.p.rapidapi.com/recipes/list?from=0&size=4&q=" + userInput ,
+        
+        // "url": "https://tasty.p.rapidapi.com/recipes/auto-complete?prefix=" + userInput,
         "method": "GET",
         "headers": {
             "X-RapidAPI-Key": "9fa51d6725msha4068349b62f730p12c6d2jsnbe63b8ef2e2d",
@@ -78,38 +80,124 @@ function handleGetData(event) {
         }
     };
 
-    $.ajax(settings).done(function (response) {
-        drinkData = response;
+    $.ajax(settings)
+    
+    // then((data) => console.log(data))
+    
+    
+    .done(function (response) {
+        console.log(response)
+        drinkData = response.results;
+
         render()
-        console.log(response);
+        console.log(drinkData);
     });
 }
+
+
 
 let $ul = document.querySelector('#list');
 function render() {
     //for of loop that goes through drink data, make the li, append to the array.
     for (let drinkList of drinkData){
-                
+        console.log(drinkList)
+        let instructString = ''
+        // for(let i= 0; i< drinkList.instructions.length; i++){
+        //     console.log(drinkList.instructions[i].display_text)
+        // }
+        for(let instruction of drinkList.instructions) {
+        instructString += instruction.display_text + '\n'
+        //    console.log(instruction.display_text)
+        }
+        console.log(instructString)
         let drinksLi = document.createElement("li");
-        drinksLi.setAttribute("href", drinkList.href);
-        drinksLi.textContent = drinkList.text;
+        drinksLi.innerHTML = `<strong>${drinkList.name}</strong><br> ${instructString}`      
+        // drinksLi.setAttribute("href", drinkList.href);
+        // drinksLi.textContent = drinkList.text; 
+        // drinksLi.textContent = drinkList.name;
+        // drinksLi.textContent = drinkList.instructions[];
+        // drinksLi.src = drinkList.renditions[0].poster_url;
+        // if(drinksLi) 
+        //     $ul.append(drinksLi);
+        //     console.log(drinksLi)
+        
+
         $ul.append(drinksLi);
     }
    
-    // let drinks= $(`<li>${drinkData}</li>`)
-    // $name.text(drinkData.name);
+   
+    // $instruction.text(drinkData.instructions[]);
     // $thumbNail.img(drinkData.thumbnail_url)
 
-    // $temp.text(weatherData.main.temp);
-    // $feelsLike.text(weatherData.main.feels_like)
-    // $weather.text(weatherData.weather[0].main)
+    
 
 }
 
+// document.querySelector("#list").addEventListener('click', function () {
+//     document.querySelector(drinksLi).innerHTML = '';
+// })
 
 
 
 
+
+//Second coffee and cocktail option
+
+// // const $name = $('#name')
+// // const $thumbNail = $('#thumbNail')
+// const $instructions = $('#instructions')
+// // const $weather = $('#weather')
+// const $input = $('input[type="text"]')
+
+// //RapidAPI Tasty API Coffee/Cocktails;
+// let drinkData= [];
+
+
+
+// $('form').on('submit', handleGetData);
+// function handleGetData(event) {
+//     event.preventDefault();
+//     let userInput= $input.val();
+//     console.log("I've been hit!")
+//     const settings = {
+//         "async": true,
+//         "crossDomain": true,
+//         "url": 'https://yummly2.p.rapidapi.com/feeds/search?start=0&maxResult=3&maxTotalTimeInSeconds=7200&q=' + userInput + '&allowedAttribute=diet-lacto-vegetarian%2Cdiet-low-fodmap&FAT_KCALMax=5000',
+//         "method": "GET",
+//         "headers": {
+//             "X-RapidAPI-Key": "9fa51d6725msha4068349b62f730p12c6d2jsnbe63b8ef2e2d",
+//             "X-RapidAPI-Host": "yummly2.p.rapidapi.com"
+//         }
+//     };
+
+//     $.ajax(settings).done(function (response) {
+//         console.log(response)
+//             drinkData = response.ingredients;
+
+//             render()
+//             // console.log(drinkData);
+//         console.log(response);
+//     });
+// }
+
+
+// let $ul = document.querySelector('#list');
+// function render() {
+//     //for of loop that goes through drink data, make the li, append to the array.
+//     for (let drinkList of drinkData){
+                
+//         let drinksLi = document.createElement("li");
+//         // drinksLi.setAttribute("href", drinkList.href);
+//         // drinksLi.textContent = drinkList.text; 
+//         drinksLi.textContent = drinkList.feed;
+         
+
+//         $ul.append(drinksLi);
+//     }
+   
+// }
+// // $instruction.text(drinkData.instructions[]);
+// // $thumbNail.img(drinkData.thumbnail_url)
 
 
 
