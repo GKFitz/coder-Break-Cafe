@@ -56,7 +56,7 @@ const $name = $('#name')
 const $thumbNail = $('#thumbNail')
 const $instructions = $('#instructions')
 // const $weather = $('#weather')
-// const $input = $('input[type="text"]')
+const $input = $('input[type="text"]')
 
 //RapidAPI Tasty API Coffee/Cocktails;
 let drinkData= [];
@@ -85,13 +85,20 @@ function handleGetData(event) {
     });
 }
 
-
+let $ul = document.querySelector('#list');
 function render() {
     //for of loop that goes through drink data, make the li, append to the array.
-
-    let drinks= $(`<li>${drinkData}</li>`)
-    $name.text(drinkData.name);
-    $thumbNail.img(drinkData.thumbnail_url)
+    for (let drinkList of drinkData){
+                
+        let drinksLi = document.createElement("li");
+        drinksLi.setAttribute("href", drinkList.href);
+        drinksLi.textContent = drinkList.text;
+        $ul.append(drinksLi);
+    }
+   
+    // let drinks= $(`<li>${drinkData}</li>`)
+    // $name.text(drinkData.name);
+    // $thumbNail.img(drinkData.thumbnail_url)
 
     // $temp.text(weatherData.main.temp);
     // $feelsLike.text(weatherData.main.feels_like)
