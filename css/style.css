@@ -36,13 +36,21 @@ header {
     text-align: center;
     
 } */
+
+main{
+    display: grid;
+    place-items: center;
+
+}
 .about{
-    display: center; 
+    display: flex; 
     justify-content: center;
+    align-items: center;
     text-align: center;
+    flex-direction: column;
     width: 70%;
     padding: 10px, 20px;
-
+    border: 1px solid black;
 
 }
 .title {
@@ -81,6 +89,10 @@ nav ul li {
 
 
 } 
+.menu{
+    display: flex;
+    gap: 20px;
+}
 .row{
     display: flex;
     flex-direction: row;
