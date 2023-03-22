@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // const $name = $('#name')
 // const $thumbNail = $('#thumbNail')
-const $instructions = $('#instructions')
+// const $instructions = $('#instructions')
 const $input = $('input[type="text"]')
 
 //RapidAPI Tasty API Coffee/Cocktails;
@@ -97,7 +97,9 @@ function handleGetData(event) {
 
 
 let $ul = document.querySelector('#list');
+
 function render() {
+    document.querySelector('#list').innerHTML = "";
     //for of loop that goes through drink data, make the li, append to the array.
     for (let drinkList of drinkData){
         console.log(drinkList)
@@ -121,17 +123,40 @@ function render() {
         //     $ul.append(drinksLi);
         //     console.log(drinksLi)
         
-
+        
         $ul.append(drinksLi);
     }
    
-   
+    
     // $instruction.text(drinkData.instructions[]);
     // $thumbNail.img(drinkData.thumbnail_url)
 
     
 
 }
+
+// document.querySelector('#list').innerHTML = "";
+//reset button for the coffee search: make it Local storage friendly
+
+
+//narrow the search to just coffee and make the assortment random
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // document.querySelector("#list").addEventListener('click', function () {
 //     document.querySelector(drinksLi).innerHTML = '';
@@ -181,23 +206,6 @@ function render() {
 // }
 
 
-// let $ul = document.querySelector('#list');
-// function render() {
-//     //for of loop that goes through drink data, make the li, append to the array.
-//     for (let drinkList of drinkData){
-                
-//         let drinksLi = document.createElement("li");
-//         // drinksLi.setAttribute("href", drinkList.href);
-//         // drinksLi.textContent = drinkList.text; 
-//         drinksLi.textContent = drinkList.feed;
-         
-
-//         $ul.append(drinksLi);
-//     }
-   
-// }
-// // $instruction.text(drinkData.instructions[]);
-// // $thumbNail.img(drinkData.thumbnail_url)
 
 
 
