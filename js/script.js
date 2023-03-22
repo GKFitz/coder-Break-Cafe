@@ -35,6 +35,7 @@ function fetchDogImage(){
     let image = document.getElementById("dogPic")
     fetch("https://api.thedogapi.com/v1/images/search?limit=10")
     .then(resp => resp.json())
+    // replace the image with the setImg function
     .then(json => image.src = json[0].url)
 }
     
@@ -70,7 +71,7 @@ function handleGetData(event) {
     const settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://tasty.p.rapidapi.com/recipes/list?from=0&size=4&q=" + userInput ,
+        "url": "https://tasty.p.rapidapi.com/recipes/list?tags=drinks&from=0&size=4&q=" + userInput ,
         
         // "url": "https://tasty.p.rapidapi.com/recipes/auto-complete?prefix=" + userInput,
         "method": "GET",
