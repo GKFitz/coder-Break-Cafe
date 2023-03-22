@@ -1,44 +1,161 @@
  
-* {
+html, body{
     box-sizing: border-box; 
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
 }
+body { 
+     
+
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+   
+
+    /* background-color: purple; */
+} 
 header {
-    height: 80px;
-    background: transparent;
-    color: white;
+    /* height: 100%; */
+    width: 100%;
+    height:100vh;
+    background: url(/coffee-house-scene.png);
+    background-size: cover; 
+    background-attachment:fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+
 }
-.nav{
+
+.about {
+    
+    width: 100%;
+    margin: 4 em auto;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    
+}
+.about{
+    display: center; 
+    justify-content: center;
+    width: 70%;
+    padding: 10px, 20px;
+
+
+}
+.title {
+    position:fixed;
+    color: white;
+    background-color: purple;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+nav{
+    position: fixed;
+    width: 100%;
+    
+} 
+nav ul {
+    list-style: none;
+    color: white;
+    background-color: purple;
+    overflow: hidden;
+    padding: 0;
+    margin:0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 30px;
+}
+
+
+.navBarLinks li a{
+    color: white;
+    font-size: 20px;
+    /* justify-content: space-between; */
+    letter-spacing: 2px;
+
+
+} 
+.row{
+
+
+}
+.card{
+    width: 20%;
+    background: lightcyan;
+    border: 1px solid black;
+    margin-bottom: 50px;
+    transition: 0.3s;
+
+}
+.card-header{
+    text-align: center;
+    padding: 50px 10px;
+    background: linear-gradient(to right, magenta, #ff4b2b);
+    color: white;
+
+}
+
+.card-body{
+    padding: 20px 50px;
+    text-align: center;
+
+
+}
+
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 40px -10px rgba(0,0,0,0.25);
+}
+
+
+
+
+
+
+
+
+/* .nav{
+    display: flex;
+    justify-content: space-between; 
+   
+
+} */
+
+/* .title{
+    font-size: 2 rem;
+    text-align: center;
+    font-weight: 400;
+    flex: 2 1 50px;
+
+} */
+/* .navBarLinks {
+    flex: 5;
     display: flex;
     justify-content: space-around;
-    /* height:inherit; */
 
-}
-
-.logo{
-
-}
-
-.navBarLinks {
+} */
+/* .navBarLinks li{
     list-style: none;
-}
-
-.navBarLinks li{
     display: inline-block;
-    padding: 20px 50px;
-    background-color: blueviolet;
+    padding: 20px 30px;
+    background-color: transparent;
+    
+   
 }
 .navBarLinks li a{
     color: black;
 
-}  
-li, a{
+}   */
+/* li, a{
     font-weight: 1000;
     font-size: 16 px;
     color: #edf0f1;
-}
+} */
 /* body { */
     /* display: flex;
     justify-content: center;
