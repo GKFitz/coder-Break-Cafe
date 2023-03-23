@@ -9,7 +9,7 @@
  the user can opt to scroll down and recieve a serotonin hit by choosing between receiving random cat and/or dog picks, courtesy of the cats API. 
  
  Technologies Used:  
- JavaScript, HTML, CSS
+ JavaScript, HTML, CSS, jQuery
  
  
  Screenshot(s):
