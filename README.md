@@ -13,7 +13,11 @@
  
  
  Screenshot(s):
- 
+ <img width="1440" alt="Screen Shot 2023-03-22 at 9 30 10 PM" src="https://media.git.generalassemb.ly/user/48266/files/9176bc3e-6d16-44de-ae3c-256650b3836e">
+
+ <img width="1435" alt="Screen Shot 2023-03-22 at 9 31 44 PM" src="https://media.git.generalassemb.ly/user/48266/files/2330a15c-7595-4265-917b-10df095c069f">
+
+ <img width="1428" alt="Screen Shot 2023-03-22 at 9 31 09 PM" src="https://user-images.githubusercontent.com/73301331/227260019-aaef33a2-a264-4c1d-a3f4-30da31662069.png">
  
  Getting Started: 
  To navigate the app, the user can either utilize the navigation bar links at the top of the application. Or they can scroll through the the site manually.
