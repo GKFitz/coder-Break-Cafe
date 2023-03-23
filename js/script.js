@@ -1,8 +1,8 @@
 
-// API CATS and Dogs
+// API Random CAT and DOG Pictures
 
-
-let storeCatPics = [];
+//CATS
+// let storeCatPics = [];
 
 function fetchCatImage(){
     
@@ -27,9 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //DOGS
 
-let storeDogPics = [];
-
-// a function to select a random breed
+// let storeDogPics = [];
 
 function fetchDogImage(){
     let animalImage = document.getElementById("animalPic")
@@ -53,12 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// const $name = $('#name')
-// const $thumbNail = $('#thumbNail')
-// const $instructions = $('#instructions')
-const $input = $('input[type="text"]')
-
 //RapidAPI Tasty API Coffee/Cocktails;
+
+const $input = $('input[type="text"]')
 let drinkData= [];
 
 
@@ -68,6 +63,7 @@ function handleGetData(event) {
     event.preventDefault();
     let userInput= $input.val();
     console.log("I've been hit!")
+
     const settings = {
         "async": true,
         "crossDomain": true,
@@ -78,14 +74,13 @@ function handleGetData(event) {
         "headers": {
             "X-RapidAPI-Key": "9fa51d6725msha4068349b62f730p12c6d2jsnbe63b8ef2e2d",
             "X-RapidAPI-Host": "tasty.p.rapidapi.com"
+        
         }
     };
 
     $.ajax(settings)
     
     // then((data) => console.log(data))
-    
-    
     .done(function (response) {
         console.log(response)
         drinkData = response.results;
@@ -105,50 +100,95 @@ function render() {
     for (let drinkList of drinkData){
         console.log(drinkList)
         let instructString = ''
-        // for(let i= 0; i< drinkList.instructions.length; i++){
-        //     console.log(drinkList.instructions[i].display_text)
-        // }
+        
         for(let instruction of drinkList.instructions) {
         instructString += instruction.display_text + '\n'
-        //    console.log(instruction.display_text)
+       
         }
         console.log(instructString)
         let drinksLi = document.createElement("li");
         drinksLi.innerHTML = `<strong>${drinkList.name}</strong><br> ${instructString}`      
-        // drinksLi.setAttribute("href", drinkList.href);
-        // drinksLi.textContent = drinkList.text; 
-        // drinksLi.textContent = drinkList.name;
-        // drinksLi.textContent = drinkList.instructions[];
-        // drinksLi.src = drinkList.renditions[0].poster_url;
-        // if(drinksLi) 
-        //     $ul.append(drinksLi);
-        //     console.log(drinksLi)
-        
-        
         $ul.append(drinksLi);
     }
-   
-    
-    // $instruction.text(drinkData.instructions[]);
-    // $thumbNail.img(drinkData.thumbnail_url)
-
-    
-
 }
 
-// document.querySelector('#list').innerHTML = "";
-//reset button for the coffee search: make it Local storage friendly
+//Inspirational Quote API
+// var category;
+
+// $('#form').on('click', handleGetDataQ);
+
+// function handleGetDataQ() {
+//     category = 'inspirational';
+//     $.ajax({
+//         method: 'GET',
+//         url: 'https://api.api-ninjas.com/v1/quotes?category=' + inspirational,
+//         headers: { 'X-Api-Key': 'VHIc78F/pShldQyn3Mm5dA==i48IHKcIYXyNCyAT'},
+//         contentType: 'application/json',
+//     }).then(
+//         (data) => {
+//         qOTD = data;
+//         render();
+//         },
+//         (error) => {
+//         console.log('bad request', error);
+//         }
+//     );   
+        
+// }  
+
+// var category= "inspirational"
+// $.ajax({
+
+//     method: 'GET',
+//     url: 'https://api.api-ninjas.com/v1/quotes?category=' + category,
+//     headers: { 'X-Api-Key': 'VHIc78F/pShldQyn3Mm5dA==i48IHKcIYXyNCyAT'},
+//     contentType: 'application/json',
+//     success: function(result) {
+//     console.log(result);
+//     },
+//     error: function ajaxError(jqXHR) {
+//         console.error('Error: ', jqXHR.responseText);
+//     }
+// });
+
+// let qOTD;
+// // const $showData = $('#show-data');
+// // const $raw = $('pre');
+  
+// $('#getQuote').on('click', (e) => {
+//     e.preventDefault();
+  
+//     $showData.text('Loading the JSON file.');
+  
+//     $.getJSON('example.json', (data) => {
+//         const markup = data.items
+//         .map(item => `<li>${item.key}: ${item.value}</li>`)
+//         .join('');
+  
+//         const list = $('<ul />').html(markup);
+  
+//         $showData.html(list);
+  
+//         $raw.text(JSON.stringify(data, undefined, 2));
+//     });
+// });
+     
+        
+//         // success: function(result) {
+//         //     console.log(result);
+//         // },
+//         // error: function ajaxError(jqXHR) {
+//         //     console.error('Error: ', jqXHR.responseText}
+
+// function render() {
+//     qOTD.quote
+//     qOTD.author
+//     qOTD.category
+    
+// }
 
 
-//narrow the search to just coffee and make the assortment random
-
-
-
-
-
-
-
-
+   
 
 
 
@@ -167,44 +207,6 @@ function render() {
 
 
 
-//Second coffee and cocktail option
-
-// // const $name = $('#name')
-// // const $thumbNail = $('#thumbNail')
-// const $instructions = $('#instructions')
-// // const $weather = $('#weather')
-// const $input = $('input[type="text"]')
-
-// //RapidAPI Tasty API Coffee/Cocktails;
-// let drinkData= [];
-
-
-
-// $('form').on('submit', handleGetData);
-// function handleGetData(event) {
-//     event.preventDefault();
-//     let userInput= $input.val();
-//     console.log("I've been hit!")
-//     const settings = {
-//         "async": true,
-//         "crossDomain": true,
-//         "url": 'https://yummly2.p.rapidapi.com/feeds/search?start=0&maxResult=3&maxTotalTimeInSeconds=7200&q=' + userInput + '&allowedAttribute=diet-lacto-vegetarian%2Cdiet-low-fodmap&FAT_KCALMax=5000',
-//         "method": "GET",
-//         "headers": {
-//             "X-RapidAPI-Key": "9fa51d6725msha4068349b62f730p12c6d2jsnbe63b8ef2e2d",
-//             "X-RapidAPI-Host": "yummly2.p.rapidapi.com"
-//         }
-//     };
-
-//     $.ajax(settings).done(function (response) {
-//         console.log(response)
-//             drinkData = response.ingredients;
-
-//             render()
-//             // console.log(drinkData);
-//         console.log(response);
-//     });
-// }
 
 
 
@@ -221,34 +223,6 @@ function render() {
 
 
 
-
-
-
-
-
-
-
-// a function to retrieve data from the API
-// fetch(url, {
-//   headers: {
-//     "x-api-key": api_key,
-//   },
-// })
-//   .then((response) => {
-//     return response.json();
-//   })
-//   .then((data) => {
-//     // Storing the retrieved data from the API in our variable
-//     storedBreeds = data;
-// });
-
-
-// Using the random function to select a specific breed. Then extracting information from that breed
-//     showCatImageAndInformation(getRandomInt(0, storedBreeds.length - 1));
-//   })
-//   .catch(function (error) {
-//     console.log(error);
-//   });
 
 
 
