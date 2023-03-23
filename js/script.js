@@ -6,10 +6,10 @@ let storeCatPics = [];
 
 function fetchCatImage(){
     
-    let image = document.getElementById("catPic")
+    let animalImage = document.getElementById("animalPic")
     fetch("https://api.thecatapi.com/v1/images/search?limit=10")
     .then(resp => resp.json())
-    .then(json => image.src = json[0].url)
+    .then(json => animalImage.src = json[0].url)
 }
     
 
@@ -32,11 +32,11 @@ let storeDogPics = [];
 // a function to select a random breed
 
 function fetchDogImage(){
-    let image = document.getElementById("dogPic")
+    let animalImage = document.getElementById("animalPic")
     fetch("https://api.thedogapi.com/v1/images/search?limit=10")
     .then(resp => resp.json())
     // replace the image with the setImg function
-    .then(json => image.src = json[0].url)
+    .then(json => animalImage.src = json[0].url)
 }
     
 
