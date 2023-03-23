@@ -1,6 +1,6 @@
 # cats-coffee-coderDash
- <Coder Break Cafe>: 
- 
+ <Coder Break Cafe>
+ Coder Break Cafe
  Description:
  This Application is the beta version of a coder wellness/break app, emulating the experience of a trip to a cafe. Coding is fun, but can be
  hard sometimes. Even the best coder needs a mental break sometimes, but deadlines can make it hard to get out and go to your favorite cafe to refresh
