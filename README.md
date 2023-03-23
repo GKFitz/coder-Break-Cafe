@@ -21,7 +21,14 @@
  
  Getting Started: 
  To navigate the app, the user can either utilize the navigation bar links at the top of the application. Or they can scroll through the the site manually.
- Once the user gets to the drink bar, they can type in what kind of drink they want, and get a recipe. After that the user can then click through random cute dog and/or cat pictures on the next card.
+ Once the user gets to the drink bar, they can type in what kind of drink they want, and get a recipe. After that the user can then click through random cute dog and/or cat pictures on the next card. Note: Cors needs to be disabled on your browser to successfully run application.
+
+ Link to App:
+ GitHUB Pages:
+ https://pages.git.generalassemb.ly/gkfitz123/cats-coffee-coderDash/
+
+ GitHUB Repo:
+ https://git.generalassemb.ly/gkfitz123/cats-coffee-coderDash
  
  
  Future Enhancements: 
